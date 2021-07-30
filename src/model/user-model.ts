@@ -5,10 +5,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    hobbies: {
+    hobbies: [{
         type: Schema.Types.ObjectId,
         ref: 'Hobby'
-    }
+    }]
 })
 
 export const UserModel = model('Users', UserSchema);

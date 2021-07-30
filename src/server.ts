@@ -2,11 +2,14 @@ import express from "express"
 import mongoose from "mongoose"
 import { dbUrl } from "./config"
 import { registerHobbyRoute } from "./controller/hobbies-controller";
-import * as bodyParser from "body-parser"
 import { registerUserRoute } from "./controller/users-controller";
 
 const app = express();
-app.use(bodyParser.json())
+
+app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
 
 
 app.listen(3000, () => {
